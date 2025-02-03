@@ -1,1 +1,10 @@
-<p>task-list works!</p>
+<div class="task-list">
+  <h1>Task List✅</h1>
+  <ul class="task-list" *ngFor="let task of tasks">
+    <li>
+      <span>task ID: {{ task.id }}</span>
+      <span>Title: {{ task.id }}</span>
+      <span>Status: {{ task.completed }}</span>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,21 @@
+.task-list {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ul {
+    padding: 0;
+    list-style: none;
+    li {
+      display: flex;
+      flex-direction: column;
+      background-color: antiquewhite;
+      padding: 1rem;
+      gap: 0.5rem;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+    }
+  }
+}
