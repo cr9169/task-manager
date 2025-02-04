@@ -3,4 +3,5 @@ export interface ITask {
   title: string;
   completed: boolean;
   creationDate: Date;
+  isHighlighted: boolean;
 }

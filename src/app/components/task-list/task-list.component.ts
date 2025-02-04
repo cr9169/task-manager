@@ -14,24 +14,28 @@ export class TaskListComponent {
       title: 'Complete Angular Course',
       completed: false,
       creationDate: new Date(),
+      isHighlighted: false,
     },
     {
       id: 2,
       title: 'Review Project Requirements',
       completed: true,
       creationDate: new Date(),
+      isHighlighted: false,
     },
     {
       id: 3,
       title: 'Submit Weekly Report',
       completed: false,
       creationDate: new Date(),
+      isHighlighted: false,
     },
     {
       id: 4,
       title: 'Submit Monthly Report',
       completed: false,
       creationDate: new Date(),
+      isHighlighted: false,
     },
   ];
 
@@ -71,7 +75,14 @@ export class TaskListComponent {
       title: title,
       completed: status,
       creationDate: new Date(),
+      isHighlighted: false,
     };
     this.tasks = [...this.tasks, newTask];
+  }
+
+  highlightTasks() {
+    this.tasks.forEach((task) => {
+      task.isHighlighted = true;
+    });
   }
 }

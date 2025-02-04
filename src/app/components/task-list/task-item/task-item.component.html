@@ -1,4 +1,8 @@
-<li class="task-item" [ngSwitch]="task.completed">
+<li
+  class="task-item"
+  [ngSwitch]="task.completed"
+  [class.highlighted]="task.isHighlighted"
+>
   <span>task ID: {{ task.id }}</span>
   <span>Title: {{ task.title }}</span>
   <span>Status: {{ task.completed ? "✅" : "❌" }}</span>
