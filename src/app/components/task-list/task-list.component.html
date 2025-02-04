@@ -1,4 +1,4 @@
-<div class="task-list" *ngIf="tasks.length > 0">
+<div class="task-list" *ngIf="tasks.length > 0; else noTasks">
   <h1>Task List</h1>
   <ul *ngFor="let task of tasks">
     <app-task-item
@@ -9,4 +9,6 @@
   </ul>
 </div>
 
-<app-fallback *ngIf="tasks.length === 0"></app-fallback>
+<ng-template #noTasks>
+  <app-fallback *ngIf="tasks.length === 0"></app-fallback>
+</ng-template>
