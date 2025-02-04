@@ -1,6 +1,10 @@
 <div class="task-list">
   <h1>Task List</h1>
   <ul *ngFor="let task of tasks">
-    <app-task-item [task]="task"></app-task-item>
+    <app-task-item
+      [task]="task"
+      (deleteTask)="deleteTask($event)"
+      (taskStatusChange)="changeTaskStatus($event)"
+    ></app-task-item>
   </ul>
 </div>

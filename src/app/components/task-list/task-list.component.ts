@@ -14,4 +14,17 @@ export class TaskListComponent {
     { id: 3, title: 'Submit Weekly Report', completed: false },
     { id: 4, title: 'Submit Monthly Report', completed: false },
   ];
+
+  deleteTask(id: number) {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
+
+  changeTaskStatus(statusDetails: { completed: boolean; id: number }) {
+    this.tasks = this.tasks.map((task) => {
+      if (task.id === statusDetails.id) {
+        return { ...task, completed: statusDetails.completed };
+      }
+      return task;
+    });
+  }
 }

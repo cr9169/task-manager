@@ -2,4 +2,6 @@
   <span>task ID: {{ task.id }}</span>
   <span>Title: {{ task.id }}</span>
   <span>Status: {{ task.completed ? "✅" : "❌" }}</span>
+  <button (click)="onDeleteTask()">Delete Task</button>
+  <button (click)="onChangeTaskStatus()">Change Status</button>
 </li>
