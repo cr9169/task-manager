@@ -39,6 +39,8 @@ export class TaskListComponent {
     },
   ];
 
+  useStyledView = false;
+
   @ViewChildren('titleInput, statusInput')
   inputs!: QueryList<ElementRef>;
 
@@ -84,5 +86,9 @@ export class TaskListComponent {
     this.tasks.forEach((task) => {
       task.isHighlighted = !task.isHighlighted;
     });
+  }
+
+  toggleView() {
+    this.useStyledView = !this.useStyledView;
   }
 }

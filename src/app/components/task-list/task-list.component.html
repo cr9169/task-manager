@@ -1,15 +1,14 @@
 <div class="task-list" *ngIf="tasks.length > 0; else noTasks">
   <h1>Task List</h1>
-  <ul>
-    <app-task-item
-      *ngFor="let task of tasks; trackBy: trackById"
-      [task]="task"
-      (deleteTask)="deleteTask($event)"
-      (taskStatusChange)="changeTaskStatus($event)"
-    >
-      <h1 dir="rtl" task-header>כותרת שמותאמת אישית למשימה {{ task.id }}</h1>
-    </app-task-item>
-  </ul>
+
+  <button (click)="toggleView()">
+    Toggle View (Current: {{ useStyledView ? "Styled" : "Simple" }})
+  </button>
+
+  <ng-container
+    *ngTemplateOutlet="useStyledView ? styledListTemplate : simpleListTemplate"
+  ></ng-container>
+
   <div class="create-new-task-section">
     <div class="title-input">
       <span>Title:</span>
@@ -27,9 +26,36 @@
       Create Task
     </button>
   </div>
+
   <button (click)="highlightTasks()">Hightlight Tasks</button>
 </div>
 
 <ng-template #noTasks>
   <app-fallback *ngIf="tasks.length === 0"></app-fallback>
+</ng-template>
+
+<ng-template #simpleListTemplate>
+  <ul>
+    <app-task-item
+      *ngFor="let task of tasks; trackBy: trackById"
+      [task]="task"
+      (deleteTask)="deleteTask($event)"
+      (taskStatusChange)="changeTaskStatus($event)"
+    >
+      <h2 dir="rtl" task-header>כותרת (Simple) למשימה {{ task.id }}</h2>
+    </app-task-item>
+  </ul>
+</ng-template>
+
+<ng-template #styledListTemplate>
+  <ul class="styled-list">
+    <app-task-item
+      *ngFor="let task of tasks; trackBy: trackById"
+      [task]="task"
+      (deleteTask)="deleteTask($event)"
+      (taskStatusChange)="changeTaskStatus($event)"
+    >
+      <h2 dir="rtl" task-header>כותרת (Styled) למשימה {{ task.id }}</h2>
+    </app-task-item>
+  </ul>
 </ng-template>
