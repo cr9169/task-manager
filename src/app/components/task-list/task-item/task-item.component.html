@@ -1,6 +1,6 @@
 <li class="task-item" [ngSwitch]="task.completed">
   <span>task ID: {{ task.id }}</span>
-  <span>Title: {{ task.id }}</span>
+  <span>Title: {{ task.title }}</span>
   <span>Status: {{ task.completed ? "✅" : "❌" }}</span>
   <span>Creation Date {{ task.creationDate | date : "dd/MM/yyyy" }}</span>
   <span *ngSwitchCase="true">Finished with the task 🥳</span>

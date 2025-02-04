@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { ITask } from '../../models/Task';
 
 @Component({
@@ -35,6 +35,19 @@ export class TaskListComponent {
     },
   ];
 
+  @ViewChildren('titleInput, statusInput')
+  inputs!: QueryList<ElementRef>;
+
+  convertStringToBool(string: string) {
+    if (string === 'true') {
+      return true;
+    } else if (string === 'false') {
+      return false;
+    } else {
+      throw new Error('String is not a boolean!');
+    }
+  }
+
   deleteTask(id: number) {
     this.tasks = this.tasks.filter((task) => task.id !== id);
   }
@@ -50,5 +63,15 @@ export class TaskListComponent {
 
   trackById(_index: number, task: ITask) {
     return task.id;
+  }
+
+  createTask(title: string, status: boolean) {
+    const newTask = {
+      id: this.tasks[this.tasks.length - 1].id + 1,
+      title: title,
+      completed: status,
+      creationDate: new Date(),
+    };
+    this.tasks = [...this.tasks, newTask];
   }
 }

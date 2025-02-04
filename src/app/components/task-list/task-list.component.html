@@ -8,6 +8,23 @@
       (taskStatusChange)="changeTaskStatus($event)"
     ></app-task-item>
   </ul>
+  <div class="create-new-task-section">
+    <div class="title-input">
+      <span>Title:</span>
+      <input type="text" placeholder="type value..." #titleInput />
+    </div>
+    <div class="is-completed-input">
+      <span>Is Completed:</span>
+      <input type="text" placeholder="type value..." #statusInput />
+    </div>
+    <button
+      (click)="
+        createTask(titleInput.value, convertStringToBool(statusInput.value))
+      "
+    >
+      Create Task
+    </button>
+  </div>
 </div>
 
 <ng-template #noTasks>
