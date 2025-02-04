@@ -1,7 +1,9 @@
-<li class="task-item">
+<li class="task-item" [ngSwitch]="task.completed">
   <span>task ID: {{ task.id }}</span>
   <span>Title: {{ task.id }}</span>
   <span>Status: {{ task.completed ? "✅" : "❌" }}</span>
+  <span *ngSwitchCase="true">Finished with the task 🥳</span>
+  <span *ngSwitchCase="false">The task needs to be done 😑</span>
   <button (click)="onDeleteTask()">Delete Task</button>
   <button (click)="onChangeTaskStatus()">Change Status</button>
 </li>
