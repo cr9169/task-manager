@@ -10,11 +10,10 @@
   }
 
   > ul {
-    height: fit-content;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 25rem);
+    max-width: 100%;
+    margin: 0 auto;
     gap: 1rem;
   }
 }
