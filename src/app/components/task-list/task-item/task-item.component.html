@@ -5,6 +5,7 @@
   <span>Creation Date {{ task.creationDate | date : "dd/MM/yyyy" }}</span>
   <span *ngSwitchCase="true">Finished with the task 🥳</span>
   <span *ngSwitchCase="false">The task needs to be done 😑</span>
+  <span *ngIf="!task.completed">{{ "do it now!" | highlight }}</span>
   <button (click)="onDeleteTask()">Delete Task</button>
   <button (click)="onChangeTaskStatus()">Change Status</button>
 </li>

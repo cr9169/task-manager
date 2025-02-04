@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskItemComponent } from './components/task-list/task-item/task-item.component';
 import { FallbackComponent } from './components/fallback/fallback.component';
+import { HighlightPipe } from './pipes/highlight.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { FallbackComponent } from './components/fallback/fallback.component';
     TaskItemComponent,
     FallbackComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, HighlightPipe],
   providers: [],
   bootstrap: [AppComponent],
 })
