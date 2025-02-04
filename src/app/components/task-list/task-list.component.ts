@@ -9,10 +9,30 @@ import { ITask } from '../../models/Task';
 })
 export class TaskListComponent {
   tasks: ITask[] = [
-    { id: 1, title: 'Complete Angular Course', completed: false },
-    { id: 2, title: 'Review Project Requirements', completed: true },
-    { id: 3, title: 'Submit Weekly Report', completed: false },
-    { id: 4, title: 'Submit Monthly Report', completed: false },
+    {
+      id: 1,
+      title: 'Complete Angular Course',
+      completed: false,
+      creationDate: new Date(),
+    },
+    {
+      id: 2,
+      title: 'Review Project Requirements',
+      completed: true,
+      creationDate: new Date(),
+    },
+    {
+      id: 3,
+      title: 'Submit Weekly Report',
+      completed: false,
+      creationDate: new Date(),
+    },
+    {
+      id: 4,
+      title: 'Submit Monthly Report',
+      completed: false,
+      creationDate: new Date(),
+    },
   ];
 
   deleteTask(id: number) {

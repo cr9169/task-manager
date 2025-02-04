@@ -2,6 +2,7 @@
   <span>task ID: {{ task.id }}</span>
   <span>Title: {{ task.id }}</span>
   <span>Status: {{ task.completed ? "✅" : "❌" }}</span>
+  <span>Creation Date {{ task.creationDate | date : "dd/MM/yyyy" }}</span>
   <span *ngSwitchCase="true">Finished with the task 🥳</span>
   <span *ngSwitchCase="false">The task needs to be done 😑</span>
   <button (click)="onDeleteTask()">Delete Task</button>
