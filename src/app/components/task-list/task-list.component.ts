@@ -82,7 +82,7 @@ export class TaskListComponent {
 
   highlightTasks() {
     this.tasks.forEach((task) => {
-      task.isHighlighted = true;
+      task.isHighlighted = !task.isHighlighted;
     });
   }
 }
