@@ -1,7 +1,8 @@
 <div class="task-list" *ngIf="tasks.length > 0; else noTasks">
   <h1>Task List</h1>
-  <ul *ngFor="let task of tasks">
+  <ul>
     <app-task-item
+      *ngFor="let task of tasks"
       [task]="task"
       (deleteTask)="deleteTask($event)"
       (taskStatusChange)="changeTaskStatus($event)"
