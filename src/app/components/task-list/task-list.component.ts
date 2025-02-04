@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ITask } from '../../models/Task';
 
 @Component({
   selector: 'app-task-list',
@@ -7,9 +8,10 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class TaskListComponent {
-  tasks = [
+  tasks: ITask[] = [
     { id: 1, title: 'Complete Angular Course', completed: false },
     { id: 2, title: 'Review Project Requirements', completed: true },
     { id: 3, title: 'Submit Weekly Report', completed: false },
+    { id: 4, title: 'Submit Monthly Report', completed: false },
   ];
 }

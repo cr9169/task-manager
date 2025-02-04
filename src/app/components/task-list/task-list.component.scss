@@ -1,21 +1,17 @@
 .task-list {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  ul {
+  > h1 {
+    margin-block: 4rem;
+  }
+
+  > ul {
+    height: fit-content;
     padding: 0;
     list-style: none;
-    li {
-      display: flex;
-      flex-direction: column;
-      background-color: antiquewhite;
-      padding: 1rem;
-      gap: 0.5rem;
-      font-family: "Courier New", Courier, monospace;
-      font-weight: bold;
-    }
   }
 }
