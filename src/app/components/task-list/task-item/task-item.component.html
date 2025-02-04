@@ -3,6 +3,7 @@
   [ngSwitch]="task.completed"
   [class.highlighted]="task.isHighlighted"
 >
+  <ng-content select="[task-header]"></ng-content>
   <span>task ID: {{ task.id }}</span>
   <span>Title: {{ task.title }}</span>
   <span>Status: {{ task.completed ? "✅" : "❌" }}</span>

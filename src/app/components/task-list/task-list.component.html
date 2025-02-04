@@ -6,7 +6,9 @@
       [task]="task"
       (deleteTask)="deleteTask($event)"
       (taskStatusChange)="changeTaskStatus($event)"
-    ></app-task-item>
+    >
+      <h1 dir="rtl" task-header>כותרת שמותאמת אישית למשימה {{ task.id }}</h1>
+    </app-task-item>
   </ul>
   <div class="create-new-task-section">
     <div class="title-input">
