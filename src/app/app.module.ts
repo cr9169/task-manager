@@ -6,6 +6,7 @@ import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskItemComponent } from './components/task-list/task-item/task-item.component';
 import { FallbackComponent } from './components/fallback/fallback.component';
 import { HighlightPipe } from './pipes/highlight.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { HighlightPipe } from './pipes/highlight.pipe';
     TaskItemComponent,
     FallbackComponent,
   ],
-  imports: [BrowserModule, HighlightPipe],
+  imports: [BrowserModule, HighlightPipe, HighlightDirective],
   providers: [],
   bootstrap: [AppComponent],
 })
